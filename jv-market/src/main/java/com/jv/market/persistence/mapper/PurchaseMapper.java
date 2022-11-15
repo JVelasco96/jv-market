@@ -1,7 +1,6 @@
 package com.jv.market.persistence.mapper;
 
 import com.jv.market.domain.Purchase;
-import com.jv.market.domain.PurchaseItem;
 import com.jv.market.persistence.entity.Compra;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -24,7 +23,7 @@ public interface PurchaseMapper {
             @Mapping(source = "productos", target="items")
     })
     Purchase toPurchase(Compra compra);
-    List<PurchaseItem> toPurchases(List<Compra> compras);
+    List<Purchase> toPurchases(List<Compra> compras);
 
     @InheritInverseConfiguration
     @Mapping(target = "cliente", ignore = true)
