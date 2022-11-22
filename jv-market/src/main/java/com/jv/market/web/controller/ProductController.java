@@ -2,10 +2,7 @@ package com.jv.market.web.controller;
 
 import com.jv.market.domain.Product;
 import com.jv.market.domain.service.ProductService;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +20,7 @@ public class ProductController {
 
     @GetMapping("/all")
     @ApiOperation("Obtener todos los productos del supermercado")
+    @Authorization(value = "JWT")
     @ApiResponse(code = 200, message = "OK")
     public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);

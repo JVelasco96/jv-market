@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Component
 public class JWTUtil {
-    private static final String KEY = "contrasenia";
+    private static final String KEY = "contrasenialargamuylargabastantelargademasiadolarga";
 
     public String generateToken(UserDetails userDetails) {
 
